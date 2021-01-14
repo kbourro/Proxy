@@ -1,0 +1,25 @@
+{
+  "name": "proxy",
+  "version": "1.0.0",
+  "description": "Proxy creator with strict parameters",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "npm run lint && npm run build",
+    "build": "tsc",
+    "lint": "eslint --fix .",
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbourro/Proxy.git"
+  },
+  "keywords": [
+    "proxy"
+  ],
+  "author": "Kristofer Bourro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kbourro/Proxy/issues"
+  },
+  "homepage": "https://github.com/kbourro/Proxy#readme"
+}

@@ -1,20 +1,15 @@
 name: Publish to NPM
-on:
-  create:
-    tags:
-      - v* # only run if new tag is created
+on: push
+
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Node v14
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: 14
-      - name: Install dependencies and build
-        run: npm install
+          node-version: 15
+      - run: npm install
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          check-version: true # only publish if the version in package.json has changed

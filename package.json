@@ -1,6 +1,6 @@
 {
   "name": "@kbourro/proxy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proxy creator with strict parameters",
   "main": "/lib/index.js",
   "types": "lib/index.d.ts",

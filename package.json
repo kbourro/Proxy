@@ -2,7 +2,8 @@
   "name": "proxy",
   "version": "1.0.0",
   "description": "Proxy creator with strict parameters",
-  "main": "index.js",
+  "main": "/lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "prepare": "npm run lint && npm run build",
     "build": "tsc",
@@ -18,8 +19,21 @@
   ],
   "author": "Kristofer Bourro",
   "license": "MIT",
+  "files": [
+    "lib/**/*"
+  ],
   "bugs": {
     "url": "https://github.com/kbourro/Proxy/issues"
   },
-  "homepage": "https://github.com/kbourro/Proxy#readme"
+  "homepage": "https://github.com/kbourro/Proxy#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.17.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "typescript": "^4.1.3"
+  }
 }

@@ -20,7 +20,7 @@
   "author": "Kristofer Bourro",
   "license": "MIT",
   "files": [
-    "lib/**/*"
+    "lib"
   ],
   "bugs": {
     "url": "https://github.com/kbourro/Proxy/issues"
@@ -35,5 +35,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "typescript": "^4.1.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

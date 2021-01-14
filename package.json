@@ -1,5 +1,5 @@
 {
-  "name": "proxy",
+  "name": "@kbourro/proxy",
   "version": "1.0.0",
   "description": "Proxy creator with strict parameters",
   "main": "/lib/index.js",

@@ -17,12 +17,12 @@ export class Proxy {
 
     private scheme?: string;
 
-    constructor(proxyObj: ProxyObj) {
+    constructor (proxyObj: ProxyObj) {
       if (proxyObj.url !== undefined && proxyObj.url !== null) {
-        const proxySplit = proxyObj.url.split(':');
+        const proxySplit = proxyObj.url.split(':')
         if (proxyObj.url.includes('@')) {
           if (proxySplit.length < 3) {
-            throw new Error(`Proxy url is wrong. ${proxyObj.url}`);
+            throw new Error(`Proxy url is wrong. ${proxyObj.url}`)
           }
           [this.username, this.password] = proxyObj.url
             .split('@')[0]
@@ -33,65 +33,65 @@ export class Proxy {
             .split('@')[1]
             .replace('http://', '')
             .replace('https://', '')
-            .split(':');
+            .split(':')
         } else {
           if (proxySplit.length < 2) {
-            throw new Error(`Proxy url is wrong. ${proxyObj.url}`);
+            throw new Error(`Proxy url is wrong. ${proxyObj.url}`)
           }
           if (proxySplit.length >= 4) {
             [this.ip, this.port, this.username, this.password] = proxyObj.url
               .replace('http://', '')
               .replace('https://', '')
-              .split(':');
+              .split(':')
           } else {
             [this.ip, this.port] = proxyObj.url
               .replace('http://', '')
               .replace('https://', '')
-              .split(':');
+              .split(':')
           }
         }
         if (proxyObj.url.startsWith('https://')) {
-          this.scheme = 'https';
+          this.scheme = 'https'
         } else {
-          this.scheme = 'http';
+          this.scheme = 'http'
         }
       } else {
         if (proxyObj.scheme === null || proxyObj.scheme === undefined) {
-          this.scheme = 'http';
+          this.scheme = 'http'
         } else {
-          this.scheme = proxyObj.scheme;
+          this.scheme = proxyObj.scheme
         }
-        this.ip = proxyObj.ip;
-        this.port = proxyObj.port;
-        this.username = proxyObj.username;
-        this.password = proxyObj.password;
+        this.ip = proxyObj.ip
+        this.port = proxyObj.port
+        this.username = proxyObj.username
+        this.password = proxyObj.password
       }
     }
 
-    getIp() {
-      return this.ip;
+    getIp () {
+      return this.ip
     }
 
-    getPort() {
-      return this.port;
+    getPort () {
+      return this.port
     }
 
-    getUsername() {
-      return this.username;
+    getUsername () {
+      return this.username
     }
 
-    getPassword() {
-      return this.password;
+    getPassword () {
+      return this.password
     }
 
-    getSheme() {
-      return this.scheme;
+    getSheme () {
+      return this.scheme
     }
 
-    getProxy() {
+    getProxy () {
       if (this.username !== null && this.username !== undefined) {
-        return `${this.scheme}://${this.username}:${this.password}@${this.ip}:${this.port}`;
+        return `${this.scheme}://${this.username}:${this.password}@${this.ip}:${this.port}`
       }
-      return `${this.scheme}://${this.ip}:${this.port}`;
+      return `${this.scheme}://${this.ip}:${this.port}`
     }
 }
